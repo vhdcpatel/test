@@ -20,7 +20,14 @@ const Admin = () => {
       (user) => user.username !== username
     );
     setListUserData(updatedUserList);
+
+    setListUserData((prevUserData) => {
+       console.log(prevUserData);
+       localStorage.setItem("userData", JSON.stringify(prevUserData));
+       return prevUserData;
+     });  
   };
+
 
   return (
     <div className="admin-panel">
