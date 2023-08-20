@@ -1,0 +1,53 @@
+
+/* Your CSS for the header */
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 5px;
+  height: 5%;
+  /* padding: 10px 20px; */
+  color: white;
+}
+
+.tabs {
+  display: flex;
+}
+
+.tabs span {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tabs span:hover {
+  font-weight: 700;
+  background-color: #555;
+}
+
+.tabs .active {
+  font-weight: 700;
+  background-color: #555;
+  color: #fff;
+}
+
+.logout-btn {
+  background-color: #4a90e2;
+  margin-right: 15px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #357ac8;
+}
+
+.main-section {
+  margin-left: 20px;
+  margin-top: 10px;
+}

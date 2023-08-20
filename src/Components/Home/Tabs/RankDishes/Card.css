@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 7.5px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: larger;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card img {
+  width: 120px; 
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 5px;
+  font-size: 1.3rem;
+  color: #666;
+}
+
+.ranking {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end; 
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.ranking button.ranking-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ranking button.ranking-btn:hover {
+  background-color: #357ac8;
+}
+
+
+.selected {
+  background-color: #ffc107 !important;
+  color: #fff !important; 
+}
+
+/* button.ranking-btn.selected {
+  background-color: #ffc107;
+  color: #fff; 
+} */
+
+/* .ranking button.ranking-btn:last-child {
+  margin-right: 0; 
+} */
