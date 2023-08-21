@@ -51,20 +51,20 @@ export const ContextProvider = ({ children }) => {
   const updateUserRankAtIndex = (username, rankno, dishIndex) => {
     
 
-    console.log(userListData);
     // Modify the userData 
     setListUserData((prevUserData) => {
       return prevUserData.map((user) => {
+        
         if (user.username === username) {
+
+           if (user.rankGiven.includes(dishIndex)) {
+             alert("Rank already given to this dish");
+             return user;
+           }
+            
           const point = rankno === 0 ? 30 : rankno === 1 ? 20 : 10;
-
-          //  if (dishIndex in user.rankGiven) {
-          //    alert("Rank already given to this dish");
-          //    return user;
-          //  }
-
           let oldDishId = user.rankGiven[rankno];
-          console.log(oldDishId);
+      
 
           if(oldDishId !==-1){
           // Remove Ponints from new 
@@ -96,13 +96,13 @@ export const ContextProvider = ({ children }) => {
           });
 
           setDishListData((prevDishData) => {
-            console.log(prevDishData);
             localStorage.setItem("dishesData", JSON.stringify(prevDishData));
             return prevDishData;
           });
 
           const updatedRankArray = [...user.rankGiven];
             updatedRankArray[rankno] = dishIndex;
+
           return {
             ...user,
             rankGiven: updatedRankArray,
@@ -113,7 +113,6 @@ export const ContextProvider = ({ children }) => {
     });
 
      setListUserData((prevUserData) => {
-       console.log(prevUserData);
        localStorage.setItem("userData", JSON.stringify(prevUserData));
        return prevUserData;
      });  

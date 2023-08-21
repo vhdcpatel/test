@@ -11,10 +11,6 @@ const Admin = () => {
     return dish ? dish.dishName : "Not Selected By User";
   };
 
-  const editUser = (username) => {
-    // Logic to toggle admin status
-  };
-
   const deleteUser = (username) => {
     const updatedUserList = userListData.filter(
       (user) => user.username !== username
@@ -47,12 +43,6 @@ const Admin = () => {
               </div>
             </div>
             <div className="action-buttons">
-              <button
-                className="toggle-admin"
-                onClick={() => editUser(user.username)}
-              >
-                Edit User
-              </button>
               <button
                 className="delete-user"
                 onClick={() => deleteUser(user.username)}

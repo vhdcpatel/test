@@ -28,6 +28,13 @@
    # or
    yarn dev
    ```
-   
+
 6. **Access the App**: Open your web browser and go to `http://localhost:5173` to access your running React app.
 
+
+### Test User Name ans PassWords:
+users:[
+  {userName: "user1",password:"password1", isAdmin: true} ,
+  {userName: "user2",password:"password2", isAdmin: false},
+  {userName: "user3",password:"password3", isAdmin: false},
+]

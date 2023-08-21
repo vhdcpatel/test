@@ -8,11 +8,11 @@ import getData from '../../../../Utils/getData/getData';
 
 import "./RankDishes.css";
 
+// Local Data because some time api is not woking properly.
 import data9 from './data.json';
 
 const RankDishes = () => {
   const { loadDishesData, dishListData, userName  } = useContext(MyContext);
-  console.log(userName);
 
   const apiUrl =
     "https://raw.githubusercontent.com/dctacademy/react-task/main/db.json";
@@ -26,17 +26,17 @@ const RankDishes = () => {
       loadDishesData(JSON.parse(storedDishesData));
     } else {
       // Not Present in the local storage than fetch transform and store the data.
-      // getData(apiUrl).then((data)=>{
-      //   const newData = trasfromData(data);
-      //   loadDishesData(newData);
-      //   localStorage.setItem("dishesData", JSON.stringify(newData));
-      // })
+      getData(apiUrl).then((data)=>{
+        const newData = trasfromData(data.data);
+        loadDishesData(newData);
+        localStorage.setItem("dishesData", JSON.stringify(newData));
+      })
  
-      // for futher testing
-      const newData = trasfromData(data9.data);
-      console.log(newData);
-      loadDishesData(newData);
-      localStorage.setItem("dishesData", JSON.stringify(newData));
+      // for futher testing(Some Time API stop working so uncomment following code);
+      // const newData = trasfromData(data9.data);
+      // console.log(newData);
+      // loadDishesData(newData);
+      // localStorage.setItem("dishesData", JSON.stringify(newData));
     }
   }, []);
 
